@@ -24,6 +24,7 @@
         <a href="#"><span class="logo nav__logo">S</span> Sibiya</a>
         <div class="nav__menu__btn" id="menu-btn">
           <i class="ri-menu-3-line"></i>
+          <i class="ri-close-line" id="close-btn"></i>
         </div>
         
       </div>
@@ -231,11 +232,22 @@
     <script>
       
       const menuBtn = document.getElementById('menu-btn');
-      const navLinks = document.getElementById('nav-links');
-  
-      menuBtn.addEventListener('click', () => {
-        navLinks.classList.toggle('open');
-      });
+const navLinks = document.getElementById('nav-links');
+const closeBtn = document.createElement('i'); 
+closeBtn.classList.add('ri', 'ri-close-line', 'close-btn'); 
+
+menuBtn.addEventListener('click', () => {
+  navLinks.classList.toggle('open'); 
+  if (navLinks.classList.contains('open')) {
+
+    menuBtn.appendChild(closeBtn);
+  } else {
+   
+    menuBtn.removeChild(closeBtn);
+  }
+});
+
+      
     </script>
   </body>
   

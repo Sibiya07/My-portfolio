@@ -544,6 +544,17 @@ footer {
   padding: 0.5rem;
   text-align: center;
 }
+#close-btn {
+  display: none; /* Hide the close button initially */
+  font-size: 1.5rem;
+  color: var(--white);
+  cursor: pointer;
+  margin-left: 10px; /* Adjust the spacing between menu and close button */
+}
+
+.nav__menu__btn.active #close-btn {
+  display: inline-block; /* Show the close button when menu is active */
+}
 
 .contact__socials {
   margin-top: 1rem;
