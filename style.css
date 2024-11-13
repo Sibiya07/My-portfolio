@@ -10,23 +10,14 @@ body {
   line-height: 1.6;
   color: #333;
   background-color: #f4f4f4;
+    width: 100%;
+    max-width: 100%;
+  
+  
 }
 
-/* Navigation Bar */
-/* General Styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-body {
-  font-family: Arial, sans-serif;
-  margin-top: 60px; /* To avoid content being hidden behind the fixed nav */
-}
 
-/* Navigation Bar */
-/* General Navbar Styles */
 nav {
   position: fixed;
   top: 0;
@@ -57,7 +48,7 @@ nav {
 }
 
 .logo__icon {
-  background-color: #2317c6;
+  background-color: #4b0de8;
   color: white;
   padding: 8px 12px;
   border-radius: 50%;
@@ -117,7 +108,7 @@ nav {
 }
 
 .nav__links li a:hover {
-  background-color: rgba(255, 255, 255, 0.2); /* Subtle hover background */
+  background-color:white; /* Subtle hover background */
   color: #d1e0ff; /* Lighter color on hover */
 }
 
@@ -138,10 +129,7 @@ nav {
 /* Mobile View Styles */
 @media screen and (max-width: 768px) {
  
-  nav {
-    padding: 10px 20px;
-    background-color: #0f5380;
-  }
+ 
 
   /* Show mobile menu button and hide .nav__links by default */
   .nav__menu__btn {
@@ -153,23 +141,41 @@ nav {
     display: block;
   }
 
-  /* Hide navigation links in mobile view initially */
   .nav__links {
     display: none; /* Hide by default on mobile */
     position: absolute;
     top: 60px; /* Position menu below navbar */
     left: 0;
-    background-color: #1724e3;
+    background-color:#0d0643;
+    color:green;
     width: 100%;
     flex-direction: column;
     text-align: center;
     padding: 10px 0;
     gap: 20px;
   }
+  
+  .nav__links a {
+    color: #0073e6; /* Blue text color */
+    text-decoration: none; /* Remove underline */
+    font-size: 16px; /* Optional: adjust font size */
+    transition: color 0.3s ease; /* Smooth color transition */
+  }
 
-  /* Show the menu when 'show' class is added */
+  /* Hover effect for mobile links */
+  .nav__links a:hover {
+    color: #005bb5; /* Darker blue on hover */
+  }
+  .contact-btn {
+    display: block; /* Show on mobile */
+    color: #0073e6; /* Blue text color for Contact */
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+  }
   .nav__links.show {
     display: flex;
+   
   }
 
   /* Hide Contact Button on Mobile */
@@ -178,20 +184,22 @@ nav {
   }
 }
 
-
 /* Header Section */
+
 .header__container {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: #0d3765; /* Solid Blue-Green */
-  color: white;
+  background: #fffaf0;
+  color: #6b6b6b;/* Dark gray for main text */
   padding: 40px;
   text-align: center;
   position: relative;
   overflow: hidden; /* Hide overflow if the content goes outside */
 }
+
 .header__image img {
   max-width: 350px;
   width: 100%;
@@ -207,9 +215,6 @@ nav {
   filter: blur(2px); /* Apply blur on hover */
 }
 
-
-
-
 .header__content {
   max-width: 500px;
   padding: 20px;
@@ -221,11 +226,12 @@ nav {
   margin-bottom: 10px;
   letter-spacing: 1px;
   text-transform: uppercase; /* Uppercase for emphasis */
+  color: #05045b; /* Bold blue for title */
 }
 
 .section__description {
   font-size: 18px;
-  color: #ececec; /* Light text color for description */
+  color: #8a8a8a;/* Dark gray for description text */
   line-height: 1.6;
   margin-top: 20px;
 }
@@ -271,7 +277,7 @@ nav {
 }
 
 .about__btn button {
-  background-color: #2ecc71;
+  background-color: #1260c5;
   padding: 12px 24px;
   border-radius: 5px;
   border: none;
@@ -284,7 +290,7 @@ nav {
 }
 
 .about__btn button:hover {
-  background-color: #27ae60;
+  background-color: #120e80;
 }
 
 /* Education Section */
@@ -571,8 +577,8 @@ footer .copyright {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #3498db;
-  color: white;
+  background-color: #320a8d;
+  color: rgb(248, 247, 247);
   padding: 10px;
   border-radius: 50%;
   font-size: 20px;
@@ -585,20 +591,7 @@ footer .copyright {
 
 /* Media Queries */
 @media (max-width: 768px) {
-  .nav__links {
-    display: none;
-    width: 100%;
-    flex-direction: column;
-    background-color: #333;
-  }
-
-  .nav__links.active {
-    display: flex;
-  }
-
-  .nav__menu__btn {
-    display: block;
-  }
+ 
 
   .service__grid {
     grid-template-columns: repeat(1, 1fr);
@@ -632,7 +625,7 @@ footer .copyright {
 /* Projects Section */
 .projects__section {
   padding: 60px 20px;
-  background-color: #f7f7f7; /* Light background for contrast */
+  background-color: #f7f7f7; 
   text-align: center;
 }
 
