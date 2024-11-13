@@ -65,35 +65,62 @@ nav {
   margin-right: 8px;
 }
 
-/* Navigation Links */
+/* Mobile Menu Button - Positioned to the right corner */
+.nav__menu__btn, .close-btn {
+  display: none; /* Hide both in desktop view */
+}
+.nav__menu__btn {
+  display: none; /* Hidden on desktop */
+  font-size: 30px;
+  cursor: pointer;
+  color: white;
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  z-index: 10;
+}
+
+/* Close Button - Positioned similarly to Hamburger */
+.close-btn {
+  display: none; /* Hidden on desktop and initially hidden on mobile */
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  z-index: 10;
+}
+
+
 .nav__links {
-  display: flex;
+  display: flex; /* Flex layout on desktop */
   list-style: none;
-  margin-left: 20px;
-  flex-grow: 1; /* Allow the links to take available space */
-  justify-content: center; /* Center the navigation links */
-  flex-shrink: 1; /* Allow the links to shrink if space is needed */
+  gap: 30px; /* Space between items for readability */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  flex-grow: 1; /* Let links expand if needed */
+  justify-content: center; /* Center links horizontally */
+  align-items: center; /* Align vertically */
+  transition: all 0.3s ease; /* Smooth transition */
 }
 
-.nav__links li {
-  margin-left: 20px;
-}
-
-.nav__links a {
+/* Styling for individual links */
+.nav__links li a {
   color: white;
   text-decoration: none;
   font-size: 16px;
-  padding: 5px;
-  transition: all 0.3s ease;
+  font-weight: 500; /* Make text more prominent */
+  padding: 8px 12px; /* Add padding for clickable area */
+  border-radius: 5px; /* Rounded corners for a softer look */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
 }
 
-.nav__links a:hover {
-  background-color: #555;
-  border-radius: 5px;
+.nav__links li a:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Subtle hover background */
+  color: #d1e0ff; /* Lighter color on hover */
 }
-.close-btn {
-  display: none; /* Hide close button in desktop view */
-}
+
 
 /* Contact Button */
 .contact-btn {
@@ -104,79 +131,35 @@ nav {
   border-radius: 5px;
   position: absolute;
   top: 10px;
-  right: 10px; /* Positioned at the right corner */
-}
-
-.contact-btn:hover {
-  background-color: #0612f1b8;
-}
-
-/* Mobile Menu Button */
-.nav__menu__btn {
-  display: none;
-  cursor: pointer;
-  font-size: 30px;
-  color: white;
+  right: 10px;
+  display: block; /* Show contact button on desktop */
 }
 
 /* Mobile View Styles */
 @media screen and (max-width: 768px) {
-  /* Navbar container for mobile view */
+ 
   nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 10px 20px;
-    background-color: #0f5380; /* Adjust the background color */
+    background-color: #0f5380;
   }
 
-  /* Logo Styling */
-  .nav__logo {
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-  }
-
-  .logo__icon {
-    background-color: #2a16be;
-    color: white;
-    padding: 8px;
-    border-radius: 50%;
-    margin-right: 8px;
-  }
-
-  /* Mobile Menu Button - Positioned to the right corner */
+  /* Show mobile menu button and hide .nav__links by default */
   .nav__menu__btn {
     display: block; /* Show hamburger icon on mobile */
-    font-size: 30px;
-    cursor: pointer;
-    color: white;
-    position: absolute; /* Position relative to the navbar */
-    top: 15px;  /* Adjust the top position */
-   
   }
 
-  /* Close Button - Positioned in the top-right corner */
-  .close-btn {
-    display: none; /* Hidden by default */
-    font-size: 30px;
-    color: white;
-    cursor: pointer;
-    position: absolute;
-    top: 30px;
-    right:50px; /* Positioned in the top-right corner */
+  /* Show the close button only when menu is open */
+  .close-btn.show {
+    display: block;
   }
 
-  /* Mobile Menu Links */
+  /* Hide navigation links in mobile view initially */
   .nav__links {
-    display: none; /* Hide navigation links by default */
+    display: none; /* Hide by default on mobile */
     position: absolute;
-    top: 60px; /* Adjust based on navbar height */
+    top: 60px; /* Position menu below navbar */
     left: 0;
-    background-color: #333;
+    background-color: #1724e3;
     width: 100%;
     flex-direction: column;
     text-align: center;
@@ -189,42 +172,9 @@ nav {
     display: flex;
   }
 
-  /* Navigation link styling */
-  .nav__links li a {
-    text-decoration: none;
-    color: white;
-    font-size: 18px;
-    padding: 10px;
-    display: block; /* Ensure links are block-level */
-  }
-
-  /* Hover effect for mobile links */
-  .nav__links li a:hover {
-    background-color: #555;
-    border-radius: 5px;
-  }
-
   /* Hide Contact Button on Mobile */
   .contact-btn {
-    display: none; /* Hide contact button on mobile */
-  }
-}
-
-/* Desktop View (Default) */
-@media screen and (min-width: 769px) {
-  .nav__menu__btn {
-    display: none; /* Hide hamburger icon on desktop */
-  }
-
-  /* Display navigation links horizontally in desktop view */
-  .nav__links {
-    display: flex;
-    justify-content: center;
-  }
-
-  /* Show contact button on desktop */
-  .contact-btn {
-    display: block;
+    display: none; /* Hide on mobile */
   }
 }
 
