@@ -24,14 +24,8 @@
         <a href="#" class="nav__logo">
           <span class="logo__icon">S</span> Sibiya
         </a>
-    
-        <!-- Mobile Menu Button (for mobile view only) -->
-        <div class="nav__menu__btn" id="menu-btn">
-          <i class="ri-menu-3-line"></i>
-        </div>
-        <div class="close-btn" id="close-btn">
-          <i class="ri-close-line"></i> <!-- Close icon -->
-        </div>
+        <span class="nav__menu__btn">&#9776;</span> <!-- Hamburger icon -->
+        <span class="close-btn">&times;</span>
     
         <!-- Contact Button at the top right corner -->
         <a href="#contact" class="contact-btn">Contact</a>
@@ -296,7 +290,7 @@
     </section>
     
     <footer>
-      <div class="contact__socials" id="contact">
+      <div class="contact__socials">
         <a href="https://x.com/SibiyaJasemine?t=51hjSuQctFawtlrMEXD6Kg&s=09"><i class="ri-twitter-fill"></i></a>
         <a href="https://www.linkedin.com/in/sibiya-jasemine-013b09253/"><i class="ri-facebook-fill"></i></a>
         <a href="https://www.instagram.com/sibi0_3?igsh=OWRsdDczd3Q0YnBo"><i class="ri-instagram-fill"></i></a>
@@ -312,23 +306,23 @@
     <a href="#home" class="scroll-to-top-btn">
       <i class="fas fa-arrow-up"></i>
     </a>
-    <script>
-// JavaScript for mobile menu toggle
-const menuBtn = document.getElementById('menu-btn'); // Button for opening the menu
-const closeBtn = document.getElementById('close-btn'); // Button for closing the menu
-const navLinks = document.getElementById('nav-links'); // Navigation links container
+<script>
+const navMenuBtn = document.querySelector('.nav__menu__btn');
+const closeBtn = document.querySelector('.close-btn');
+const navLinks = document.querySelector('.nav__links');
 
-// Toggle mobile menu visibility when the menu button is clicked
-menuBtn.addEventListener('click', () => {
-  navLinks.classList.add('show'); // Add 'show' class to display the mobile menu
-  closeBtn.style.display = 'block'; // Show the close button
+navMenuBtn.addEventListener('click', () => {
+  navLinks.classList.add('show');   // Show menu
+  navMenuBtn.style.display = 'none'; // Hide hamburger icon
+  closeBtn.style.display = 'block';  // Show close button
 });
 
-// Close the mobile menu when the close button is clicked
 closeBtn.addEventListener('click', () => {
-  navLinks.classList.remove('show'); // Remove the 'show' class to hide the mobile menu
-  closeBtn.style.display = 'none'; // Hide the close button
+  navLinks.classList.remove('show'); // Hide menu
+  navMenuBtn.style.display = 'block'; // Show hamburger icon
+  closeBtn.style.display = 'none';     // Hide close button
 });
+
 
 
 
